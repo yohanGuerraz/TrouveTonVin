@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:trouvetonvin/constants.dart';
 import 'package:trouvetonvin/screens/splash/splash_screen.dart';
+import 'package:trouvetonvin/routes.dart';
+import 'package:trouvetonvin/theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,24 +14,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+       debugShowCheckedModeBanner: false,
       title: 'TrouveTonVin',
-      theme: ThemeData(
-        scaffoldBackgroundColor:  Colors.white,
-        fontFamily: "Muli",
-        appBarTheme : AppBarTheme(
-          color: Colors.white,
-          elevation: 0,
-          brightness:Brightness.light,
-          iconTheme: IconThemeData(color: Colors.black)
-        ),
-        textTheme: TextTheme(
-          bodyText1: TextStyle(color: kTextColor),
-          bodyText2: TextStyle(color: kTextColor),
-        ),
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: SplashScreen(),
+      theme: theme(),
+      // home: SplashScreen(),
+      // We use routeName so that we dont need to remember the name
+      initialRoute: SplashScreen.routeName,
+      routes: routes,
     );
   }
 }
