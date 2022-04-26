@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import '../../../size_config.dart';
 
 class Body extends StatelessWidget {
-  const Body({ Key? key }) : super(key: key);
+  
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: SizeBox(
+      child: SizedBox(
         width: double.infinity,
         child: Column(
           children: [
@@ -22,9 +22,26 @@ class Body extends StatelessWidget {
               "Entrer votre mail et mot de passe \nou utiliser l'un des reseaux sociaux ci-dessous",
               textAlign: TextAlign.center,
             ),
+            SignForm(),
           ],
         ),
       ),
+    );
+  }
+}
+
+class SignForm extends StatefulWidget {
+  const SignForm({ Key? key }) : super(key: key);
+
+  @override
+  State<SignForm> createState() => _SignFormState();
+}
+
+class _SignFormState extends State<SignForm> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      
     );
   }
 }
