@@ -5,6 +5,7 @@ import '../../../components/default_button.dart';
 import '../../../components/form_error.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
+import '../../forgot_password/forgot_password_screen.dart';
 
 class SignForm extends StatefulWidget {
   @override
@@ -41,8 +42,12 @@ class _SignFormState extends State<SignForm> {
               ),
               Text("Remember me"),
               Spacer(),
-              Text("Forgot Password",
-                  style: TextStyle(decoration: TextDecoration.underline)),
+              GestureDetector(
+                onTap: () => Navigator.popAndPushNamed(
+                  context, ForgotPasswordScreen.routeName),
+                child: Text("Forgot Password",
+                    style: TextStyle(decoration: TextDecoration.underline)),
+              ),
             ],
           ),
           SizedBox(height: getProportionateScreenHeight(20)),

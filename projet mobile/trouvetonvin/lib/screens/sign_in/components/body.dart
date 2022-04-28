@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:trouvetonvin/screens/forgot_password/forgot_password_screen.dart';
 import 'package:trouvetonvin/screens/sign_in/components/sign_form.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import '../../../components/custom_surfix_icon.dart';
 import '../../../components/default_button.dart';
 import '../../../components/form_error.dart';
+import '../../../components/no_account_text.dart';
 import '../../../components/socal_card.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -57,22 +59,7 @@ class Body extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: getProportionateScreenHeight(20)),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                        "Don't have an account ? ",
-                        style: TextStyle(fontSize:getProportionateScreenWidth(16)),
-                    ),
-                    Text(
-                        "Sign Up",
-                        style: TextStyle(
-                          fontSize:getProportionateScreenWidth(16),
-                          color: kPrimaryColor,
-                          ),
-                    ),
-                  ],
-                ),
+                NoAccountText(),
               ],
             ),
           ),
@@ -81,5 +68,6 @@ class Body extends StatelessWidget {
     );
   }
 }
+
 
 
