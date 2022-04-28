@@ -17,16 +17,16 @@ class _BodyState extends State<Body> {
   List<Map<String, String>> splashData = [
     {
       "text": "Bienvenue sur TrouveTonVin, Let’s shop!",
-      "image": "assets/images/splash_1.png"
+      "image": "assets/images/gif_02.gif"
     },
     {
       "text":
           "Nous aidons a la mise en place d'un marcher plus juste \nentre le client et les cultivateurs de toute la France",
-      "image": "assets/images/splash_2.png"
+      "image": "assets/images/gif_03.gif"
     },
     {
       "text": "Acheter vos produits rapidement et facilement grace a notre application. \nTout en restant chez vous",
-      "image": "assets/images/splash_3.png"
+      "image": "assets/images/gif_01.gif"
     },
   ];
   @override
