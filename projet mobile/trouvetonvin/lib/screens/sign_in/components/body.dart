@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+// ignore: import_of_legacy_library_into_null_safe
 
 import '../../../components/custom_surfix_icon.dart';
+import '../../../components/default_button.dart';
+import '../../../components/form_error.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
 
@@ -43,22 +45,63 @@ class SignForm extends StatefulWidget {
 }
 
 class _SignFormState extends State<SignForm> {
+  final _formKey = GlobalKey<FormState>();
+  final List<String> errors = [];
   @override
   Widget build(BuildContext context) {
     return Form(
+      key: _formKey,
       child: Column(
         children: [
-          TextFormField(
-            decoration: InputDecoration(
-              labelText: "Email",
-              hintText: "Entrer votre adresse mail",
-              floatingLabelBehavior: FloatingLabelBehavior.always,
-              suffixIcon: CustomSurffixIcon(svgIcon: 'assets/icons/Mail.svg'),
-            ),
+          buildEmailFormField(),
+          SizedBox(height: getProportionateScreenHeight(20)),
+          buildPasswordFormField(),
+          SizedBox(height: getProportionateScreenHeight(20)),
+          FormError(errors: errors),
+          DefaultButton(
+            text: "Connexion",
+            press: () {
+              if (_formKey.currentState!.validate()) {
+                _formKey.currentState!.save();
+              }
+            },
           ),
         ],
       ),
     );
   }
-}
 
+//Input pour le password
+  TextFormField buildPasswordFormField() {
+    return TextFormField(
+      obscureText: true,
+      decoration: InputDecoration(
+        labelText: "Password",
+        hintText: "Enter password",
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        suffixIcon: CustomSurffixIcon(svgIcon: 'assets/icons/Lock.svg'),
+      ),
+    );
+  }
+
+//Input pour l email
+  TextFormField buildEmailFormField() {
+    return TextFormField(
+      keyboardType: TextInputType.emailAddress,
+      validator: (value) {
+        if (value!.isEmpty) {
+          setState(() {
+            errors.add("Please enter your mail");
+          });
+        }
+        return null;
+      },
+      decoration: InputDecoration(
+        labelText: "Email",
+        hintText: "Enter email",
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        suffixIcon: CustomSurffixIcon(svgIcon: 'assets/icons/Mail.svg'),
+      ),
+    );
+  }
+}
