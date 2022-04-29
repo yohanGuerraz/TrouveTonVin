@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:trouvetonvin/screens/sign_in/sign_in_screen.dart';
 
 import '../constants.dart';
 import '../screens/forgot_password/forgot_password_screen.dart';
+import '../screens/sign_up/sign_up_screen.dart';
 import '../size_config.dart';
 
 class NoAccountText extends StatelessWidget {
@@ -15,17 +17,16 @@ class NoAccountText extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-            "Don't have an account ? ",
-            style: TextStyle(fontSize:getProportionateScreenWidth(16)),
+          "Don’t have an account? ",
+          style: TextStyle(fontSize: getProportionateScreenWidth(16)),
         ),
         GestureDetector(
-          onTap: () {},
+          onTap: () => Navigator.pushNamed(context, SignUpScreen.routeName),
           child: Text(
-              "Sign Up",
-              style: TextStyle(
-                fontSize:getProportionateScreenWidth(16),
-                color: kPrimaryColor,
-                ),
+            "Sign Up",
+            style: TextStyle(
+                fontSize: getProportionateScreenWidth(16),
+                color: kPrimaryColor),
           ),
         ),
       ],
