@@ -3,6 +3,8 @@ import 'package:trouvetonvin/components/default_button.dart';
 //import 'package:trouvetonvin/screens/home/home_screen.dart';
 import 'package:trouvetonvin/size_config.dart';
 
+import '../../home/home_screen.dart';
+
 class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -28,7 +30,7 @@ class Body extends StatelessWidget {
           child: DefaultButton(
             text: "Back to home",
             press: () {
-              //Navigator.pushNamed(context, HomeScreen.routeName);
+              Navigator.pushNamed(context, HomeScreen.routeName);
             },
           ),
         ),
