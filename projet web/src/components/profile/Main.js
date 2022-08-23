@@ -1,6 +1,5 @@
-import { Component } from "react";
 import styled from "styled-components";
-import React, {component, useState } from "react";
+import React, { useState } from "react";
 
 function Main() {
   const [like1, setLike1] = useState(0);
