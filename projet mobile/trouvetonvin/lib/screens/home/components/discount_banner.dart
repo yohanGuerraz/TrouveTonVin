@@ -27,7 +27,7 @@ class DiscountBanner extends StatelessWidget {
           children: [
             const TextSpan(text: "A Summer Surpise\n"),
             TextSpan(
-              text: "Réduction de 20% sur le deuxieme produit acheté ",
+              text: "Réduction de 20% avec l'abonnement num 1 ",
               style: TextStyle(
                 fontSize: getProportionateScreenWidth(24),
                 fontWeight: FontWeight.bold,
