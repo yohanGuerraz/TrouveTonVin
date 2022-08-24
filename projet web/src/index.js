@@ -1,4 +1,4 @@
-import React, { useEffect, useState }  from 'react';
+import React, {useEffect}  from 'react';
 import ReactDOM from 'react-dom';
 import App from './App'
 
@@ -6,15 +6,15 @@ console.log("Welcome")
 ReactDOM.render(<App />, document.getElementById('root'))
 
 useEffect(() => {
-  console.log("its scrolling")
-  var navbar = document.querySelector(".menu");
-  var sticky = navbar.offsetTop;
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  } 
-}, [window.onscroll]) 
+    console.log("its scrolling")
+    var navbar = document.querySelector(".menu");
+    var sticky = navbar.offsetTop;
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+    } else {
+      navbar.classList.remove("sticky");
+    } 
+  }, [window.onscroll])
 
 // window.onscroll = function() {myFunction()};
 

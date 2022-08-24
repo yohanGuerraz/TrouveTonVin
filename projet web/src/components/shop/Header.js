@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import logo from '../../assets/images/winHubLogo1.png';
 import {Link} from 'react-router-dom'
-import CartCount from 'CartCount'
-import FaviCount from 'FaviCount'
+import CartCount from './CartCount'
+import FaviCount from './FaviCount'
 
 const Header = ({page_title}) => {
 
@@ -56,7 +56,7 @@ const Header = ({page_title}) => {
 
         {/* <!-- LOGO --> */}
         <div className="logo">
-          <Link to="/" rel="home" className="site-logo">
+          <Link to="/shop" rel="home" className="site-logo">
             <img src={logo} alt="WINE HUB."/>
             {/* <!-- Site logo --> */}
           </Link>
@@ -66,16 +66,16 @@ const Header = ({page_title}) => {
         <nav aria-label="Primary" className="navigation  m-hide">
           <ul className="menu">
             <li><Link to="/">HOME</Link></li>
-            <li><Link to="/">Shop</Link>
+            <li><Link to="/shop">Shop</Link>
               <ul className="submenu">
-                <li><Link to="/">Vin de Dessert</Link></li>
-                <li><Link to="/">Vin Rouge</Link></li>
-                <li><Link href="/">Rosé</Link></li>
-                <li><Link to="/">Vin Blanc</Link></li>
+                <li><Link to="/shop">Vin de Dessert</Link></li>
+                <li><Link to="/shop">Vin Rouge</Link></li>
+                <li><Link href="/shop">Rosé</Link></li>
+                <li><Link to="/shop">Vin Blanc</Link></li>
               </ul>
             </li>
-            <li><Link to="/">About</Link></li>
-            <li><Link to="/">Contact</Link></li>
+            <li><Link to="/login">About</Link></li>
+            <li><Link to="/Profile">Contact</Link></li>
           </ul>
         </nav>
 

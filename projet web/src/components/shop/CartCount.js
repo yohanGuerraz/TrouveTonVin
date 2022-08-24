@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import {CartContext, useMoney} from '../shop/contexts/cart'
+import {CartContext, utilMoney} from '../shop/contexts/cart'
 
 const CartCount = () => {
 	console.log(`CartCount()`)

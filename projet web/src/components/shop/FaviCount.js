@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import {FaviContext, uMoney}  from 'contexts/favi'
+import {FaviContext, uMoney}  from './contexts/favi'
 
 const FaviCount = () => {
 	console.log(`CartCount()`)

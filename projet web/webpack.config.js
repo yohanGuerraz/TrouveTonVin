@@ -25,7 +25,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: './src/index.html',
+      template: './public/index.html',
       filename: './index.html'
     })
   ], 
@@ -40,12 +40,12 @@ module.exports = {
   }, 
   resolve: {
     alias: {
-      components: path.resolve(__dirname, 'src/components/'),
-      pages: path.resolve(__dirname, 'src/pages/'),
+      components: path.resolve(__dirname, 'src/components/shop'),
+      pages: path.resolve(__dirname, 'src/components/pages/'),
       css: path.resolve(__dirname, 'src/css/'),
-      contexts: path.resolve(__dirname, 'src/contexts/'),
-      utils: path.resolve(__dirname, 'src/utils/'),
-      img: path.resolve(__dirname, 'src/img/'),
+      contexts: path.resolve(__dirname, 'src/components/pages/contexts/'),
+      utils: path.resolve(__dirname, 'src/components/pages/utils/'),
+      img: path.resolve(__dirname, 'src/asset/image/'),
       js: path.resolve(__dirname, 'src/js/')
     }
   }

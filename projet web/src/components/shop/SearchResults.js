@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import ProductRow from 'ProductRow'
+import ProductRow from './ProductRow'
 import { Pagination } from 'antd';
 // import 'antd/dist/antd.css';
 

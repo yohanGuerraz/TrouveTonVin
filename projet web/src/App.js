@@ -5,19 +5,18 @@ import Single_product  from './components/pages/Product-page'
 import Checkout  from './components/pages/Checkout'
 import Favorite  from './components/pages/Favorite'
 import UserContext from './components/shop/contexts/user'
-import {CartContext, useMoney} from './components/shop/contexts/cart'
+import {CartContext, utilMoney} from './components/shop/contexts/cart'
 import {FaviContext, uMoney}  from './components/shop/contexts/favi'
 import ProductsContext from './components/shop/contexts/products'
 import firebase from './components/shop/utils/firebase'
 import Loading from './components/shop/Loading'
-import './css/reset.css';
+// import './css/reset.css';
 import LandingPage from './components/pages/LandingPage'
 import LoginPage from './components/pages/LoginPage'
 import RegisterPage from './components/pages/RegisterPage'
 import ForgetPasswordPage from './components/pages/ForgetPasswordPage'
 import HomePage from './components/pages/HomePage'
 import ProfilePage from './components/pages/ProfilePage';
-
 import './App.css'
 
 const temp = [];
@@ -87,21 +86,21 @@ const App = () => {
       <>
       <Router>
         <Switch>
+          <Route exact path="/" component={ LandingPage } />
+          <Route path="/login" component={ LoginPage } />
+          <Route path="/register" component={ RegisterPage } />
+          <Route path="/forget-password" component={ ForgetPasswordPage } />
+          <Route path="*" component={LandingPage}/>
           <ProductsContext.Provider value={productsAr}>
             <CartContext.Provider value={{data: cart, updater: addToCart}}>
             <FaviContext.Provider value={{data: favi, updater: addToFavi}}>
               <Switch>
-                    <Route exact path="/"><Products data={productsAr} page_tit={"SHOP"}/></Route>
+                    <Route path="/Profile" component={ ProfilePage } />
+                    <Route exact path="/shop"><Products data={productsAr} page_tit={"SHOP"}/></Route>
                     <Route  path="/single_product/:slug"><Single_product page_tit={"PRODUCT"}/></Route>
                     <Route  path="/cart"> <Checkout page_tit={"CART"}/> </Route>
                     <Route  path="/favorite"> <Favorite page_tit={"FAVORITE"}/> </Route>
-                    <Route path="*"> <Products data={productsAr} page_tit={"SHOP"}/> </Route>
-                    <Route exact path="/" component={ LandingPage } />
-                    <Route path="/login" component={ LoginPage } />
-                    <Route path="/register" component={ RegisterPage } />
-                    <Route path="/forget-password" component={ ForgetPasswordPage } />
-                    <Route path="/home" component={ HomePage } />
-                    <Route path="/Profile" component={ ProfilePage } />
+                    {/* <Route path="*"> <Products data={productsAr} page_tit={"SHOP"}/> </Route> */}
                 </Switch>
             </FaviContext.Provider>
             </CartContext.Provider >

@@ -86,7 +86,7 @@ const checkPass = (isOk) => {
         });
             return (
                 <>
-                    <Link to="/home"></Link>
+                    <Link to="/shop"></Link>
                 </>
             )
     }

@@ -1,9 +1,9 @@
 import React, {useContext} from 'react'
 import {Link} from 'react-router-dom'
-import Image from 'Image'
-import Item from 'Item'
-import FavItem from 'FavItem'
-import {CartContext, useMoney} from 'contexts/cart'
+import Image from './Image'
+import Item from './Item'
+import FavItem from './FavItem'
+import {CartContext, utilMoney} from './contexts/cart'
 
 
 const ProductRow = ({data}) => {

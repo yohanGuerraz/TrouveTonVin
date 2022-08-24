@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import {CartContext, useMoney} from 'contexts/cart'
+import {CartContext, utilMoney} from './contexts/cart'
 import $ from "jquery"
 
 const Item = ({data}) => {

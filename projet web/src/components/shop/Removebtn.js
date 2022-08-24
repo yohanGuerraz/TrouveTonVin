@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import {CartContext, useMoney} from 'contexts/cart'
+import {CartContext, utilMoney} from './contexts/cart'
 import styled from 'styled-components'
 
 const Removebtn = ({data}) => {

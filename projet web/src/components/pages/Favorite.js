@@ -38,7 +38,7 @@ const Favorite = ({data,page_tit}) => {
 											<Removebtn data={item}> </Removebtn> 
 											<Item key={item.id} data={item} className="addfav"/>
 										</Model2> }))
-						: (<div>No items in your cart, try going to the <Link to="/">shop</Link></div> )
+							: (<div>No items in your cart, try going to the <Link to="/shop">shop</Link></div> )
 					}
 				</ul>
 				<footer>
