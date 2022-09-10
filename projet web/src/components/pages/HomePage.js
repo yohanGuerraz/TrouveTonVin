@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import temp from '../../App';
 import Toolbar from '../Toolbar/Toolbar';
 import SideDrawer from '../SideDrawer/SideDrawer';
 import Backdrop from '../Backdrop/Backdrop';

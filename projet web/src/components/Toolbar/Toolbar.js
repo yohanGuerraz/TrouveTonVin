@@ -1,5 +1,4 @@
 import React from 'react';
-import ProfilePage from '../pages/ProfilePage'
 import DrawerToggleButton from '../SideDrawer/DrawerToggleButton';
 import './Toolbar.css';
 import '../../App.css' 

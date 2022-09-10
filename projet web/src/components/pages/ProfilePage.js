@@ -1,5 +1,5 @@
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import React, { Component } from 'react';
+import React from 'react';
 import '../../App.css';
 import Style from "../profile/Style";
 

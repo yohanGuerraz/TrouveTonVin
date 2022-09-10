@@ -1,0 +1,483 @@
+/* Note there a few "reset" styles given in reset.css. Review those before you begin */
+/* from style.css */
+.rating .material-icons, dd>span.material-icons {
+	color:#E9BE0F;
+}
+a:hover, .fa:hover{
+    color: var(--btn-color);
+}
+/* <============== Header styling ============> */
+.page-header .fa {
+	color:var(--alt-color);
+}
+.page-header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "menu-toggle cart"
+    "logo logo"
+    "pageTitle pageTitle";
+    /* text-align: center; */
+}
+.nav-toggle{
+    grid-area: menu-toggle;
+    width: 3em;
+    margin: 1em 0px 0px 1em;
+    /* position: fixed; */
+    /* float: right; */
+    /* justify-content: flex-start; */
+    /* justify-self: flex-start; */
+}
+.top-cart{
+    grid-area: cart;
+    display: flex;
+    justify-content: flex-end;
+    margin: 1em 1em 0px 0em;
+}
+.logo{
+    grid-area: logo;
+    justify-self: center
+}
+.m-hide{
+    display: none;
+}
+.header-cart, .prodcut-list-cart{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: space-between; 
+    /* background-color: green; */
+}
+.logo{
+    width:200px;
+    justify-self: center
+}
+.page-title{
+    grid-area: pageTitle;
+    background-color: var(--global-color-secondary);
+    text-align: center;
+	margin-bottom: 1em;
+}
+.nav_style{
+    background-color:var(--global-color-primary);
+    padding: 2em;
+    position: absolute;
+    top: 8.6em;
+    width: 100%;
+    z-index: 1;
+}
+.navigation a{
+    display:inline-block;
+    padding:1em 4em;
+    font-size: 1.3em;
+}
+.navigation>ul>li{
+    border:1px solid #ccc;
+    border-width:1px 0;
+    text-align:center;
+}
+
+.navigation ul li:active,  .navigation ul li:hover{
+    background-color : var(--secondary-on);
+}
+.navigation ul ul {
+    display:none;
+}
+.navigation ul ul li {
+    left:auto;  /*resets the left:50% on the parent li */
+    margin:0; /* Reset the 1px margin from the top menu */
+    clear:left;
+    width:100%;
+}
+.navigation ul ul li a,
+.navigation ul li.active li a,
+.navigation ul li:hover ul li a{
+    font-size:1em;
+    font-weight:normal; /* resets the bold set for the top level menu items */
+    line-height:1.4em; /* overwrite line-height value from top menu */
+}
+.navigation ul ul li a:hover,
+.navigation ul li.active ul li a:hover,
+.navigation ul li:hover ul li a:hover {
+    background:var(--btn-color); /* Sub menu items background colour */
+    color:var(--prim-text-color);
+}
+/* Make the sub menus appear on hover */
+.navigation ul li:hover ul,
+.navigation ul li.hover ul { /* This line is required for IE 6 and below */
+    background-color: var(--secondary-on);
+    position: absolute;
+    left: 30%;
+    display:block;     /* Show the sub menus */
+}
+
+
+/* <============= Main styling  ============> */
+main{
+    display: grid;
+    padding: 0 2em 2em 2em;
+    margin-bottom: 2em;
+}
+.results{
+    padding-top: 2em;
+}
+.pages, .iterm-properties, .iterm-properties fieldset> ol, .iterm-properties fieldset> ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+}
+.product{
+    margin-bottom: 3em;
+}
+.iterm-properties{
+    display: flex;
+    justify-content:flex-start;
+    margin-bottom: 1em;
+}
+.rating dd{
+    display: flex;
+    margin-left: .3em;
+}
+.rating dd p{
+    margin: 0.1em .5em 0 0;
+    color: var(--prim-text-color);
+}
+.add-to-cart-btn{
+    background-color:var(--btn-color);
+    border: none;
+    color:var(--prim-text-color);
+    padding: 1em 2em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+.add-to-cart-btn:hover{
+    background-color:var(--alt-color);
+}
+.add-to-fav {
+    background-color: var(--global-color-primary);
+}
+label.rating{
+    justify-content: flex-start;
+}
+.rating {
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: .5em;
+}
+/* <================ side bar styling ============> */
+
+.filter-toggle{
+    display: flex;
+    gap: 1em;
+    justify-content: center; 
+}
+.filter-toggle h2{
+    margin: .5em 0 0 0 ;
+    font-size: 1.2em;
+}
+.filter-list{
+    display: grid;
+    height: 10em;
+    align-content: space-evenly;
+}
+.filter-list li label {
+    cursor: pointer;
+    display: inline;
+}
+.filter-list li{
+    position: relative;
+    padding: .3em;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(img/background-wood.jpg);
+}
+.thumbcart{
+    height: 6em;
+    margin-right: 1em;
+}
+/* Alert message */
+.alert-box {
+	padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;  
+    position: fixed;
+    top: 10vh;
+    right: 10vh;
+
+}
+
+.success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    display: none;
+}
+
+.failure {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    display: none;
+}
+
+.warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+    display: none;
+}
+/* Alert message style ends */
+
+.noMatch{
+    text-align: center;
+    align-self: center;
+    margin: 0px auto;
+    padding-bottom: 12em;
+    padding-top: 12em;
+}
+
+/* <==================== footer styling ============> */
+.main-footer{
+    background-color: var(--secondary-on);
+    /* margin: 0 -1em -1em -1em; */
+    padding: 2em;
+}
+.footer-links{
+    margin-bottom: 4em;
+}
+.footer-links div ol li {
+    margin-bottom: .7em;
+}
+.legal, .social{
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+.legal :nth-child(2) {
+   padding: 0 1em;
+   border-left: .2em solid var(--alt-text-color);
+   border-right: .2em solid var(--alt-text-color);
+ }
+ .social{
+     margin-bottom: 2em;
+ }
+ .social-section{
+    justify-content:center;
+    text-align: center;
+ }
+.footer-nav{
+    text-align: center;
+    padding-bottom: 1.5em;
+    border-bottom: 1px solid var(--alt-text-color);
+}
+.product.hide {
+    display: none;
+}
+input:checked ~ label .control-me::after {
+    content: '🍷';
+}
+.control-me {
+    cursor: pointer;
+    display: inline;
+    content: '';
+    position: absolute; 
+    text-align: center;
+    left: 1.5em;
+    top: .3em;
+    width: 1.4em;
+    height: 1.4em;
+    border: 1px solid rgb(0, 0, 0);
+    background: var(--alt-color);
+    background-image: url("img/wine.png");
+    border-radius: .2em;
+    box-shadow: inset 0 1px 3px rgba(110, 110, 110, 0.1), 0 0 0 rgba(203, 34, 237, .2);
+    -webkit-transition: all .275s;
+        transition: all .275s;
+}
+.filter-list li input[type=checkbox], .filter-list li input[type=radio]{
+    /* height: 40px; */
+    width: 60px;
+    opacity: 0;
+}
+
+.sort{
+    height: 2.5em;
+    padding: .2em;
+    background-color: var(--alt-color);
+    font-weight: bolder;
+}
+.sort:hover{
+    background-color:var(--btn-color);
+    color: var(--prim-text-color);
+}
+.ant-pagination{
+    display: flex;
+    gap: 1em;
+}
+
+.ant-pagination-item:active{
+    color:red;
+}
+.empty_pages{
+
+justify-self: center;
+}
+.defualt_page{
+    background-color: red;
+    display: grid;
+    justify-self: center;
+}
+
+/* ============== start media queries ============*/
+@media only screen and (min-width: 992px){
+    body{
+        background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(img/background-wood.jpg);
+    }
+
+    /* <================= Header styling ============> */
+    .page-header{
+        box-shadow:5px 50px 50px 5px rgb(0, 0, 0);  
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-template-areas: 
+        "search logo cart"
+        "menu menu menu"
+        "page-title page-title page-title";
+    }
+    .top-cart{
+        grid-area: cart;
+        display: flex;
+        justify-content: flex-end;
+        align-self: end;
+    }
+    .logo{
+        grid-area: logo;
+        justify-self: center
+    }
+    .nav_style{
+        background-color:var(--global-color-primary);
+        padding: 2em;
+        position: relative;
+        top: 8.6em;
+        width: 100%;
+    }
+    .navigation{
+        grid-area: menu;
+        margin: 2em 0 0 0;
+        z-index: 1;
+    }
+    .filt-toggle, .nav-toggle{
+        display: none;
+    }
+    .navigation ul{
+        display: flex;
+        justify-content:center;
+        /* gap: 4em; */
+    }
+
+    .navigation ul li{
+        display:inline;
+    }
+
+    .m-hide{
+        display: block;
+    }
+    .menu{
+        z-index: 9999;
+    }
+    .menu>li:hover {
+        background-color:var(--secondary-on);
+    }
+    .page-title{
+        grid-area: page-title;
+    }
+    .page-header, .main-footer{
+        padding:2em;
+        width:76em;
+        margin:0em auto;
+    }
+    .find{
+        border: 0px;
+        align-self: flex-start;
+        /* height: 2.5em; */
+    }
+    .search {
+        display: flex;
+        /* justify-content: flex-start; */
+        align-self:flex-end;
+    }
+    .search-bar{
+        display: flex;
+        /* justify-content: flex-end; */
+        align-self: flex-end;
+        grid-area: search;
+    }
+    input[type=search]{
+        height: 2.5em;
+        align-self: flex-end;
+}
+    .sticky {
+        position: fixed;
+        background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(img/background-wood.jpg);
+        left: 0%;
+        top: 0;
+        width: 100%;
+      }
+      
+    /* <================== Main styling =================> */
+    main{
+        box-shadow:5px 50px 50px 5px rgb(0, 0, 0);  
+        /* background-color: var(--global-color-primary); */
+        padding:3em;
+        width:76em;
+        margin:0em auto;
+        padding-bottom: 2em;
+        display: grid;
+        grid-template-columns:1fr 2fr;
+        grid-template-areas:
+        "sidebar results" ;
+        /* column-gap: 2em; */
+    }
+    .sidebar, .results{
+        padding: 0 1em;
+    }
+    .results{
+        margin-left: -4em;
+    }
+    .product{
+        display: flex;
+        justify-content: space-between;
+        gap: 2em;
+    }
+    .product .prod-details{
+        /* background-color: red; */
+        align-self: flex-start;
+    }
+    .prod-details h3{
+        margin-top: 0;;
+    }
+    .product img{
+        width: 250px;
+        height: 280px;
+    }
+
+    /* <================== Footer styling =================> */
+    .page-footer{
+        background-color: var(--secondary-on);
+    }
+    .sidebar{
+        margin-top: 1em;
+        width: 20em;
+    }
+    .footer-links{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .footer-about-us{
+        width: 30em;
+    }
+    
+}
