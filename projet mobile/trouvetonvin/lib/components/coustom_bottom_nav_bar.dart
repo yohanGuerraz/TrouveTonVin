@@ -5,6 +5,7 @@ import 'package:trouvetonvin/screens/home/home_screen.dart';
 
 import '../constants.dart';
 import '../enums.dart';
+import '../screens/profile/profile_screen.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
   const CustomBottomNavBar({
@@ -63,8 +64,9 @@ class CustomBottomNavBar extends StatelessWidget {
                       ? kPrimaryColor
                       : inActiveIconColor,
                 ),
-                onPressed: () {}, //=>
-                    //Navigator.pushNamed(context, ProfileScreen.routeName),
+                onPressed: () =>
+                    Navigator.pushNamed(context, ProfileScreen.routeName), //=>
+                //Navigator.pushNamed(context, ProfileScreen.routeName),
               ),
             ],
           )),

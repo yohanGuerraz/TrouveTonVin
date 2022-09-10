@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../size_config.dart';
 
+/*
 class Categories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -30,7 +31,7 @@ class Categories extends StatelessWidget {
     );
   }
 }
-
+*/
 class CategoryCard extends StatelessWidget {
   const CategoryCard({
     Key? key,

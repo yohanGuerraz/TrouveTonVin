@@ -5,14 +5,14 @@ import 'package:trouvetonvin/components/form_error.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
-import '../../sign_in/sign_in_screen.dart';
+import '../../profile/profile_screen.dart';
 
-class CompleteProfileForm extends StatefulWidget {
+class AccountsProfilForm extends StatefulWidget {
   @override
-  _CompleteProfileFormState createState() => _CompleteProfileFormState();
+  State<AccountsProfilForm> createState() => _AccountsProfilFormState();
 }
 
-class _CompleteProfileFormState extends State<CompleteProfileForm> {
+class _AccountsProfilFormState extends State<AccountsProfilForm> {
   final _formKey = GlobalKey<FormState>();
   final List<String?> errors = [];
   String? firstName;
@@ -50,10 +50,10 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
           FormError(errors: errors),
           SizedBox(height: getProportionateScreenHeight(40)),
           DefaultButton(
-            text: "continue",
+            text: "Enregistrer",
             press: () {
               if (_formKey.currentState!.validate()) {
-                Navigator.pushNamed(context, SignInScreen.routeName);
+                Navigator.pushNamed(context, ProfileScreen.routeName);
               }
             },
           ),
@@ -80,7 +80,7 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
       },
       decoration: InputDecoration(
         labelText: "Address",
-        hintText: "Enter your phone address",
+        hintText: "Enter your address",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,

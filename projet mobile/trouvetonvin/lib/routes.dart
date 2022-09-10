@@ -9,9 +9,12 @@ import 'package:trouvetonvin/screens/otp/otp_screen.dart';
 import 'package:trouvetonvin/screens/home/home_screen.dart';
 import 'package:trouvetonvin/screens/profile/profile_screen.dart';
 import 'package:trouvetonvin/screens/cart/cart_screen.dart';
+import 'package:trouvetonvin/screens/accounts_profil/accounts_profil_screen.dart';
+import 'package:trouvetonvin/screens/abonnement/abonnement_screen.dart';
+import 'package:trouvetonvin/screens/list_produit/list_produit_screen.dart';
 
 /*
-
+import 'package:trouvetonvin/screens/list_produit/list_produit_screen.dart';
 import 'package:trouvetonvin/screens/details/details_screen.dart';
 
 
@@ -29,7 +32,10 @@ final Map<String, WidgetBuilder> routes = {
   HomeScreen.routeName: (context) => HomeScreen(),
   CartScreen.routeName: (context) => CartScreen(),
   ProfileScreen.routeName: (context) => ProfileScreen(),
+  AccountProfilScreen.routeName: (context) => AccountProfilScreen(),
+
   /*
+  list_produit.routeName: (context) => list_produit(),
   DetailsScreen.routeName: (context) => DetailsScreen(),
   */
 };

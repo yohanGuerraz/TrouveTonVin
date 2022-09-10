@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:trouvetonvin/screens/list_produit/list_produit_screen.dart';
 import '../../../size_config.dart';
 import 'section_title.dart';
 
@@ -72,7 +72,7 @@ class SpecialOfferCard extends StatelessWidget {
       child: GestureDetector(
         onTap: press,
         child: SizedBox(
-          width: getProportionateScreenWidth(242),
+          width: getProportionateScreenWidth(178),
           height: getProportionateScreenWidth(100),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(20),
