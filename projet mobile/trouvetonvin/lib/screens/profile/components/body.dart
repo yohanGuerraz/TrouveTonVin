@@ -14,18 +14,18 @@ class Body extends StatelessWidget {
           ProfilePic(),
           SizedBox(height: 20),
           ProfileMenu(
-            text: "My Account",
+            text: "Mon compte",
             icon: "assets/icons/User Icon.svg",
             press: () =>
                 Navigator.pushNamed(context, AccountProfilScreen.routeName),
           ),
           ProfileMenu(
-            text: "Notifications",
-            icon: "assets/icons/Bell.svg",
+            text: "Abonnement",
+            icon: "assets/icons/Gift Icon.svg",
             press: () {},
           ),
           ProfileMenu(
-            text: "Settings",
+            text: "Paramettre",
             icon: "assets/icons/Settings.svg",
             press: () {},
           ),
@@ -35,7 +35,7 @@ class Body extends StatelessWidget {
             press: () {},
           ),
           ProfileMenu(
-            text: "Log Out",
+            text: "Deconnexion",
             icon: "assets/icons/Log out.svg",
             press: () {},
           ),

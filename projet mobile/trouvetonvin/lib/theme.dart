@@ -4,7 +4,8 @@ import 'constants.dart';
 
 ThemeData theme() {
   return ThemeData(
-    scaffoldBackgroundColor: Colors.white,
+    //scaffoldBackgroundColor: Color.fromARGB(255, 235, 200, 178),
+    scaffoldBackgroundColor: Color.fromARGB(255, 255, 255, 255),
     fontFamily: "Muli",
     appBarTheme: appBarTheme(),
     textTheme: textTheme(),
@@ -12,6 +13,7 @@ ThemeData theme() {
     visualDensity: VisualDensity.adaptivePlatformDensity,
   );
 }
+
 // design des Input de l'application
 InputDecorationTheme inputDecorationTheme() {
   OutlineInputBorder outlineInputBorder = OutlineInputBorder(
@@ -36,9 +38,10 @@ TextTheme textTheme() {
 
 AppBarTheme appBarTheme() {
   return AppBarTheme(
+    //color: Color.fromARGB(255, 235, 200, 178),
     color: Colors.white,
     elevation: 0,
-    brightness: Brightness.light,
+    //brightness: Brightness.light,
     iconTheme: IconThemeData(color: Colors.black),
     textTheme: TextTheme(
       headline6: TextStyle(color: Color(0XFF8B8B8B), fontSize: 18),

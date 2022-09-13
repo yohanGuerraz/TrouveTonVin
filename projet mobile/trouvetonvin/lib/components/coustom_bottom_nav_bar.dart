@@ -5,6 +5,7 @@ import 'package:trouvetonvin/screens/home/home_screen.dart';
 
 import '../constants.dart';
 import '../enums.dart';
+import '../screens/abonnement/abonnement_screen.dart';
 import '../screens/profile/profile_screen.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
@@ -50,12 +51,23 @@ class CustomBottomNavBar extends StatelessWidget {
                     Navigator.pushNamed(context, HomeScreen.routeName),
               ),
               IconButton(
-                icon: SvgPicture.asset("assets/icons/Heart Icon.svg"),
+                icon: SvgPicture.asset(
+                  "assets/icons/Heart Icon.svg",
+                  color: MenuState.home == selectedMenu
+                      ? kPrimaryColor
+                      : inActiveIconColor,
+                ),
                 onPressed: () {},
               ),
               IconButton(
-                icon: SvgPicture.asset("assets/icons/Chat bubble Icon.svg"),
-                onPressed: () {},
+                icon: SvgPicture.asset(
+                  "assets/icons/Chat bubble Icon.svg",
+                  color: MenuState.home == selectedMenu
+                      ? kPrimaryColor
+                      : inActiveIconColor,
+                ),
+                onPressed: () =>
+                    Navigator.pushNamed(context, AbonnementScreen.routeName),
               ),
               IconButton(
                 icon: SvgPicture.asset(
@@ -65,8 +77,7 @@ class CustomBottomNavBar extends StatelessWidget {
                       : inActiveIconColor,
                 ),
                 onPressed: () =>
-                    Navigator.pushNamed(context, ProfileScreen.routeName), //=>
-                //Navigator.pushNamed(context, ProfileScreen.routeName),
+                    Navigator.pushNamed(context, ProfileScreen.routeName),
               ),
             ],
           )),

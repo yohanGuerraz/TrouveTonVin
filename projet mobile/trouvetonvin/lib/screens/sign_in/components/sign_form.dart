@@ -7,7 +7,7 @@ import '../../../components/default_button.dart';
 import '../../../components/form_error.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
-
+import 'package:http/http.dart' as http;
 
 class SignForm extends StatefulWidget {
   @override
@@ -21,6 +21,12 @@ class _SignFormState extends State<SignForm> {
   bool? remember = false;
   final List<String?> errors = [];
 
+  var emailControlle = TextEditingController();
+  var mdpControlle = TextEditingController();
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+  /// Fonction permettant de gérer et afficher les erreurs
+////////////////////////////////////////////////////////////////////////////////////////////////
   void addError({String? error}) {
     if (!errors.contains(error))
       setState(() {
@@ -28,6 +34,9 @@ class _SignFormState extends State<SignForm> {
       });
   }
 
+////////////////////////////////////////////////////////////////////////////////////////////////
+  /// Fonction permettant de gérer et effacer les erreurs
+////////////////////////////////////////////////////////////////////////////////////////////////
   void removeError({String? error}) {
     if (errors.contains(error))
       setState(() {
@@ -47,6 +56,7 @@ class _SignFormState extends State<SignForm> {
           SizedBox(height: getProportionateScreenHeight(30)),
           Row(
             children: [
+              /// structure de la checkbox "se souvenir de moi"
               Checkbox(
                 value: remember,
                 activeColor: kPrimaryColor,
@@ -77,7 +87,8 @@ class _SignFormState extends State<SignForm> {
                 _formKey.currentState!.save();
                 // if all are valid then go to success screen
                 KeyboardUtil.hideKeyboard(context);
-                Navigator.pushNamed(context, LoginSuccessScreen.routeName);
+                login();
+                //Navigator.pushNamed(context, LoginSuccessScreen.routeName);
               }
             },
           ),
@@ -86,8 +97,13 @@ class _SignFormState extends State<SignForm> {
     );
   }
 
+////////////////////////////////////////////////////////////////////////////////////////////////
+  /// structure de l'input Mot de passe avec gestion d'erreurs
+////////////////////////////////////////////////////////////////////////////////////////////////
+
   TextFormField buildPasswordFormField() {
     return TextFormField(
+      controller: mdpControlle,
       obscureText: true,
       onSaved: (newValue) => password = newValue,
       onChanged: (value) {
@@ -119,8 +135,13 @@ class _SignFormState extends State<SignForm> {
     );
   }
 
+////////////////////////////////////////////////////////////////////////////////////////////////
+  /// structure de l'input email avec gestion d'erreurs
+////////////////////////////////////////////////////////////////////////////////////////////////
+
   TextFormField buildEmailFormField() {
     return TextFormField(
+      controller: emailControlle,
       keyboardType: TextInputType.emailAddress,
       onSaved: (newValue) => email = newValue,
       onChanged: (value) {
@@ -148,5 +169,20 @@ class _SignFormState extends State<SignForm> {
         suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/Mail.svg"),
       ),
     );
+  }
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+  /// Fontion permettant de vérifier si l'utilisateur existe ou non dans la bdd
+////////////////////////////////////////////////////////////////////////////////////////////////
+  Future<void> login() async {
+    if (mdpControlle.text.isNotEmpty && emailControlle.text.isNotEmpty) {
+      var reponse = await http.post(Uri.parse(""),
+          body: ({'email': emailControlle.text, 'mdp': mdpControlle.text}));
+      if (reponse.statusCode == 200) {
+        Navigator.pushNamed(context, LoginSuccessScreen.routeName);
+      } else {
+        addError(error: kErrorConnexion);
+      }
+    }
   }
 }

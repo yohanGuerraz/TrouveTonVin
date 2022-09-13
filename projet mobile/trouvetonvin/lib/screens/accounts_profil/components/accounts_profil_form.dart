@@ -17,8 +17,11 @@ class _AccountsProfilFormState extends State<AccountsProfilForm> {
   final List<String?> errors = [];
   String? firstName;
   String? lastName;
+  String? email;
+  String? mdp;
   String? phoneNumber;
   String? address;
+  String? codepostal;
 
   void addError({String? error}) {
     if (!errors.contains(error))
@@ -46,7 +49,13 @@ class _AccountsProfilFormState extends State<AccountsProfilForm> {
           SizedBox(height: getProportionateScreenHeight(30)),
           buildPhoneNumberFormField(),
           SizedBox(height: getProportionateScreenHeight(30)),
+          buildMailFormField(),
+          SizedBox(height: getProportionateScreenHeight(30)),
+          buildMdpFormField(),
+          SizedBox(height: getProportionateScreenHeight(30)),
           buildAddressFormField(),
+          SizedBox(height: getProportionateScreenHeight(30)),
+          buildCodeFormField(),
           FormError(errors: errors),
           SizedBox(height: getProportionateScreenHeight(40)),
           DefaultButton(
@@ -58,6 +67,34 @@ class _AccountsProfilFormState extends State<AccountsProfilForm> {
             },
           ),
         ],
+      ),
+    );
+  }
+
+  TextFormField buildCodeFormField() {
+    return TextFormField(
+      onSaved: (newValue) => codepostal = newValue,
+      onChanged: (value) {
+        if (value.isNotEmpty) {
+          removeError(error: kAddressNullError);
+        }
+        return null;
+      },
+      validator: (value) {
+        if (value!.isEmpty) {
+          addError(error: kAddressNullError);
+          return "";
+        }
+        return null;
+      },
+      decoration: InputDecoration(
+        labelText: "code postal",
+        hintText: "Entrer votre code postal",
+        // If  you are using latest version of flutter then lable text and hint text shown like this
+        // if you r using flutter less then 1.20.* then maybe this is not working properly
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        suffixIcon:
+            CustomSurffixIcon(svgIcon: "assets/icons/Location point.svg"),
       ),
     );
   }
@@ -79,8 +116,8 @@ class _AccountsProfilFormState extends State<AccountsProfilForm> {
         return null;
       },
       decoration: InputDecoration(
-        labelText: "Address",
-        hintText: "Enter your address",
+        labelText: "Adresse",
+        hintText: "Entrer votre adresse",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -108,8 +145,8 @@ class _AccountsProfilFormState extends State<AccountsProfilForm> {
         return null;
       },
       decoration: InputDecoration(
-        labelText: "Phone Number",
-        hintText: "Enter your phone number",
+        labelText: "Telephone",
+        hintText: "Entrer votre numero de telephone",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -118,12 +155,66 @@ class _AccountsProfilFormState extends State<AccountsProfilForm> {
     );
   }
 
+  TextFormField buildMdpFormField() {
+    return TextFormField(
+      onSaved: (newValue) => mdp = newValue,
+      onChanged: (value) {
+        if (value.isNotEmpty) {
+          removeError(error: kAddressNullError);
+        }
+        return null;
+      },
+      validator: (value) {
+        if (value!.isEmpty) {
+          addError(error: kAddressNullError);
+          return "";
+        }
+        return null;
+      },
+      decoration: InputDecoration(
+        labelText: "mot de passe",
+        hintText: "Entrer votre mot de passe",
+        // If  you are using latest version of flutter then lable text and hint text shown like this
+        // if you r using flutter less then 1.20.* then maybe this is not working properly
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/Lock.svg"),
+      ),
+    );
+  }
+
+  TextFormField buildMailFormField() {
+    return TextFormField(
+      onSaved: (newValue) => email = newValue,
+      onChanged: (value) {
+        if (value.isNotEmpty) {
+          removeError(error: kAddressNullError);
+        }
+        return null;
+      },
+      validator: (value) {
+        if (value!.isEmpty) {
+          addError(error: kAddressNullError);
+          return "";
+        }
+        return null;
+      },
+      decoration: InputDecoration(
+        labelText: "mail",
+        hintText: "Entrer votre mail",
+        // If  you are using latest version of flutter then lable text and hint text shown like this
+        // if you r using flutter less then 1.20.* then maybe this is not working properly
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/Mail.svg"),
+      ),
+    );
+  }
+
   TextFormField buildLastNameFormField() {
     return TextFormField(
       onSaved: (newValue) => lastName = newValue,
       decoration: InputDecoration(
-        labelText: "Last Name",
-        hintText: "Enter your last name",
+        labelText: "Nom",
+        hintText: "Entrer votre nom",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -149,8 +240,8 @@ class _AccountsProfilFormState extends State<AccountsProfilForm> {
         return null;
       },
       decoration: InputDecoration(
-        labelText: "First Name",
-        hintText: "Enter your first name",
+        labelText: "Prenom",
+        hintText: "Entrer votre prenom",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,

@@ -33,7 +33,7 @@ final Map<String, WidgetBuilder> routes = {
   CartScreen.routeName: (context) => CartScreen(),
   ProfileScreen.routeName: (context) => ProfileScreen(),
   AccountProfilScreen.routeName: (context) => AccountProfilScreen(),
-
+  AbonnementScreen.routeName: (context) => AbonnementScreen(),
   /*
   list_produit.routeName: (context) => list_produit(),
   DetailsScreen.routeName: (context) => DetailsScreen(),

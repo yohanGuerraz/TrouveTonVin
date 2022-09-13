@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:trouvetonvin/size_config.dart';
 
-const kPrimaryColor = Color(0xFFFF7643);
-const kPrimaryLightColor = Color(0xFFFFECDF);
+const kPrimaryColor = Color.fromARGB(255, 248, 17, 17);
+const kPrimaryLightColor = Color.fromARGB(255, 250, 184, 140);
 const kPrimaryGradientColor = LinearGradient(
   begin: Alignment.topLeft,
   end: Alignment.bottomRight,
@@ -12,7 +12,6 @@ const kSecondaryColor = Color(0xFF979797);
 const kTextColor = Color(0xFF757575);
 
 const kAnimationDuration = Duration(milliseconds: 200);
-
 
 final headingStyle = TextStyle(
   fontSize: getProportionateScreenWidth(28),
@@ -26,14 +25,15 @@ const defaultDuration = Duration(milliseconds: 250);
 // Form Error
 final RegExp emailValidatorRegExp =
     RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
-const String kEmailNullError = "Please Enter your email";
-const String kInvalidEmailError = "Please Enter Valid Email";
-const String kPassNullError = "Please Enter your password";
-const String kShortPassError = "Password is too short";
+const String kEmailNullError = "Entrer votre adresse mail";
+const String kInvalidEmailError = "Entrer une adresse mail valide";
+const String kPassNullError = "Entrer votre mot de passe";
+const String kShortPassError = "Mot de passe trop court";
 const String kMatchPassError = "Passwords don't match";
-const String kNamelNullError = "Please Enter your name";
-const String kPhoneNumberNullError = "Please Enter your phone number";
-const String kAddressNullError = "Please Enter your address";
+const String kNamelNullError = "Entrer votre nom";
+const String kPhoneNumberNullError = "Entrer votre numero de telephone";
+const String kAddressNullError = "Entrer votre adresse";
+const String kErrorConnexion = "Utilisateur non reconnue";
 
 final otpInputDecoration = InputDecoration(
   contentPadding:
