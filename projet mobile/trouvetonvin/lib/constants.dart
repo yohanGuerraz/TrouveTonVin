@@ -34,6 +34,7 @@ const String kNamelNullError = "Entrer votre nom";
 const String kPhoneNumberNullError = "Entrer votre numero de telephone";
 const String kAddressNullError = "Entrer votre adresse";
 const String kErrorConnexion = "Utilisateur non reconnue";
+const String kErrorcodePostal = "Entrer un code postal";
 
 final otpInputDecoration = InputDecoration(
   contentPadding:

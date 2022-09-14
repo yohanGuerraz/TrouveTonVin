@@ -18,9 +18,9 @@ class Body extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(height: SizeConfig.screenHeight * 0.04), // 4%
-                Text("Register Account", style: headingStyle),
+                Text("Créer un compte", style: headingStyle),
                 Text(
-                  "Complete your details or continue \nwith social media",
+                  "Creer votre profil en entrant vos données ou continuer \navec l'un de vos réseaux sociaux",
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: SizeConfig.screenHeight * 0.08),
@@ -45,10 +45,11 @@ class Body extends StatelessWidget {
                 ),
                 SizedBox(height: getProportionateScreenHeight(20)),
                 Text(
-                  'By continuing your confirm that you agree \nwith our Term and Condition',
+                  'En continuant, confirmez que vous acceptez \navec nos termes et conditions',
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.caption,
-                )
+                ),
+                SizedBox(height: getProportionateScreenHeight(20)),
               ],
             ),
           ),

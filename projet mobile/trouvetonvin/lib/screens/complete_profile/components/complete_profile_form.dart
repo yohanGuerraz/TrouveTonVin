@@ -19,6 +19,7 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
   String? lastName;
   String? phoneNumber;
   String? address;
+  String? codePostal;
 
   void addError({String? error}) {
     if (!errors.contains(error))
@@ -61,6 +62,42 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
       ),
     );
   }
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+  /// structure de l'input code postal avec gestion d'erreurs
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+  TextFormField buildCodePostalFormField() {
+    return TextFormField(
+      onSaved: (newValue) => codePostal = newValue,
+      onChanged: (value) {
+        if (value.isNotEmpty) {
+          removeError(error: kErrorcodePostal);
+        }
+        return null;
+      },
+      validator: (value) {
+        if (value!.isEmpty) {
+          addError(error: kErrorcodePostal);
+          return "";
+        }
+        return null;
+      },
+      decoration: InputDecoration(
+        labelText: "Code Postal",
+        hintText: "Enter your phone address",
+        // If  you are using latest version of flutter then lable text and hint text shown like this
+        // if you r using flutter less then 1.20.* then maybe this is not working properly
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        suffixIcon:
+            CustomSurffixIcon(svgIcon: "assets/icons/Location point.svg"),
+      ),
+    );
+  }
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+  /// structure de l'input adresse avec gestion d'erreurs
+////////////////////////////////////////////////////////////////////////////////////////////////
 
   TextFormField buildAddressFormField() {
     return TextFormField(
