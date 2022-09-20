@@ -91,8 +91,8 @@ class _SignFormState extends State<SignForm> {
                 _formKey.currentState!.save();
                 // if all are valid then go to success screen
                 KeyboardUtil.hideKeyboard(context);
-                login();
-                //Navigator.pushNamed(context, LoginSuccessScreen.routeName);
+                //login();
+                Navigator.pushNamed(context, LoginSuccessScreen.routeName);
               }
             },
           ),
