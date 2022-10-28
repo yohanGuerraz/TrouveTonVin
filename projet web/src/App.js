@@ -86,11 +86,6 @@ const App = () => {
       <>
       <Router>
         <Switch>
-          <Route exact path="/" component={ LandingPage } />
-          <Route path="/login" component={ LoginPage } />
-          <Route path="/register" component={ RegisterPage } />
-          <Route path="/forget-password" component={ ForgetPasswordPage } />
-          <Route path="*" component={LandingPage}/>
           <ProductsContext.Provider value={productsAr}>
             <CartContext.Provider value={{data: cart, updater: addToCart}}>
             <FaviContext.Provider value={{data: favi, updater: addToFavi}}>
