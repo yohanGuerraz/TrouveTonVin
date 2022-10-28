@@ -19,7 +19,7 @@ const Products = ({data,page_tit}) => {
 
   // ****** FILTER ******
   // Filter the results into a new array that's the same size or smaller
-  const filteredArray = data.filter(({prod_rating}) => rating == prod_rating || rating === 0 ) 
+  const filteredArray = data.filter(({prod_rating}) => rating === prod_rating || rating === 0 ) 
                                   .filter(({prod_cat}) => catergories.length === 0 || 
                                                         prod_cat.filter((cat) => catergories.includes(cat)).length > 0)
                                   .filter(({prod_weight}) => weight.length === 0 || 

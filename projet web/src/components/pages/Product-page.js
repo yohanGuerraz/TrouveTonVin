@@ -16,7 +16,7 @@ const Single_product = ({data, page_tit}) => {
 
   const products = useContext(ProductsContext)
   const {slug} = useParams()
-  const {id, prod_img, prod_link, prod_name, prod_desc, prod_prices, prod_rating, prod_cat, prod_weight} = products.find(product => product.id == slug)
+  const {id, prod_img, prod_link, prod_name, prod_desc, prod_prices, prod_rating, prod_cat, prod_weight} = products.find(product => product.id === slug)
   const [bigImage, setImage] = useState(prod_img[0]) 
   const prd = products.find(product => product.id == slug)
 

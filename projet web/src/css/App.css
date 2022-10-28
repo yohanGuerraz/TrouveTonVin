@@ -3,12 +3,21 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Roboto", sans-serif
+    font-family: "Roboto", sans-serif;
+    text-align: center
+}
+
+form p {
+    margin-bottom: 1rem;
 }
 
 body {
     margin: 0 auto
 }
+
+/* .text-center {
+    text-align: center
+} */
 
 .m-5-auto {
     margin: 5rem auto

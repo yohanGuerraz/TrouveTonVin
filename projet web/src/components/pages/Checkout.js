@@ -19,29 +19,29 @@ const Checkout = ({data,page_tit}) => {
 	return (
 		<Layout page_title = {page_tit}>
 			<ul>
-				{ 
+				{
 					(cart.length)
-					? (cart.map(item => {
-
-						let {id, prod_img, prod_name, prod_prices, cost} = products.find(prod => prod.id === item.id)
-						console.log(prod_prices[1]+" check out")
-						subtotal += prod_prices[1] * item.count
-						return <Model2>
-							<Link to={`/single_product/${id}`}>
-								<Image src={prod_img[0]} alt={prod_name} className="thumbcart" ></Image> 
-								<h2 className="cartProduct" key={item.id}>
-									<b>{prod_name}</b>
-									({item.count} x {utilMoney(prod_prices[1])}) 
-									<b>= {utilMoney(prod_prices[1] * item.count)}</b>
-								</h2>
-							</Link>
-							<Removebtn data={item}> </Removebtn>
-						</Model2> }))
-					: (<div>No items in your cart, try going to the <Link to="/shop">shop</Link></div> )
+						? (cart.map(item => {
+ 
+							let {id, prod_img, prod_name, prod_prices, cost} = products.find(prod => prod.id === item.id)
+							console.log(prod_prices[1]+" check out")
+							subtotal += prod_prices[1] * item.count
+							return <Model2>
+								<Link to={`/single_product/${id}`}>
+									<Image src={prod_img[0]} alt={prod_name} className="thumbcart" ></Image> 
+									<h2 className="cartProduct" key={item.id}>
+										<b>{prod_name}</b> 
+										({item.count} x {utilMoney(prod_prices[1])}) 
+										<b>= {utilMoney(prod_prices[1] * item.count)}</b>
+									</h2>
+								</Link>
+								<Removebtn data={item}> </Removebtn>
+							</Model2> }))
+						: (<div>Aucun article dans votre panier, essayez d'aller à la <Link to="/shop">boutique</Link></div> )
 				}
 			</ul>
 			<footer>
-				{Boolean(cart.length) && <div><button className="add-to-cart-btn">Check out {utilMoney(subtotal)}</button></div>}
+				{Boolean(cart.length) && <div><button className="add-to-cart-btn">Valider {utilMoney(subtotal)}</button></div>}
 			</footer>
 		</Layout>
 	)

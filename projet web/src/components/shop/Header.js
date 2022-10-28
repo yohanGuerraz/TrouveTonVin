@@ -46,7 +46,7 @@ const Header = ({page_title}) => {
         <div className="top-cart">
           {/* <!-- Additional links --> */}
           <ul className="header-cart">
-            <li><a href="#"><i className="fa fa-user-circle fa-2x"></i></a></li>
+            {<li> <a href="#"> <i className="fa fa-user-circle fa-2x"></i></a></li>}
             {/* <li><a href="#"><i className="fa far fa-heart fa-2x"></i></a></li> */}
             <Link to="/favorite"><FaviCount /></Link>
             {/* <li><a href="#"><i className="fa fas fa-shopping-cart fa-2x" aria-label="Items in your cart"></i></a></li> */}

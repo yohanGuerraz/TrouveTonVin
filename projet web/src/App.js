@@ -17,13 +17,13 @@ import RegisterPage from './components/pages/RegisterPage'
 import ForgetPasswordPage from './components/pages/ForgetPasswordPage'
 import HomePage from './components/pages/HomePage'
 import ProfilePage from './components/pages/ProfilePage';
-import './App.css'
+import './css/App.css'
 
 const temp = [];
 
 
-
 const App = () => {
+  console.log("start app 1");
 
     const [productsAr, setProductsAr] = useState([])
     const [loading, setLoading] = useState(true)
@@ -51,8 +51,7 @@ const App = () => {
       loadData()
     }, [])  
   
-    
-  
+      
     // Generate one StudentRow per object above.
   
     // loading screen
@@ -90,8 +89,13 @@ const App = () => {
             <CartContext.Provider value={{data: cart, updater: addToCart}}>
             <FaviContext.Provider value={{data: favi, updater: addToFavi}}>
               <Switch>
-                    <Route path="/Profile" component={ ProfilePage } />
-                    <Route exact path="/shop"><Products data={productsAr} page_tit={"SHOP"}/></Route>
+                    <Route exact path="/"> <LandingPage page_tit={"ACCUEIL"} /></Route>
+                    <Route path="/login"> <LoginPage page_tit={"LOGIN"} /></Route>
+                    <Route path="/register"> <RegisterPage page_tit={"REGISTER"} /></Route>
+                    <Route path="/forget-password"> <ForgetPasswordPage page_tit={"FORGET_PASSWORD"} /></Route>
+                    <Route path="*"> <LandingPage page_tit={"LANDING"} component={LandingPage}/></Route>
+                    <Route path="/Profile"> <ProfilePage page_tit={"PROFILE"} /></Route>
+                    <Route path="/shop"><Products data={productsAr} page_tit={"SHOP"}/></Route>
                     <Route  path="/single_product/:slug"><Single_product page_tit={"PRODUCT"}/></Route>
                     <Route  path="/cart"> <Checkout page_tit={"CART"}/> </Route>
                     <Route  path="/favorite"> <Favorite page_tit={"FAVORITE"}/> </Route>
@@ -103,7 +107,7 @@ const App = () => {
         </Switch>
       </Router>
       </>
-    )
+   )
   }
 
-  export default (App, temp);
+  export default App;

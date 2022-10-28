@@ -8,7 +8,7 @@ const Image = ({src, alt, ...attr}) => {
   const [img, setImg] = useState(``)
 
   if (src) {
-    import(`img/${src}`).then((image) => setImg(image.default))
+    import(`../../assets/images/${src}`).then((image) => setImg(image.default))
   }
 
   
